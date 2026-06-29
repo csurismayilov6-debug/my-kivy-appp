@@ -11,6 +11,9 @@ fullscreen = 0
 android.presplash_color = #FFFFFF
 android.api = 33
 android.minapi = 21
+android.sdk = 23
+android.ndk = 25b
 android.accept_sdk_license = True
 android.check_license = True
-android.skip_update = False
+# Bu hissəni əlavə et:
+p4a.branch = master
