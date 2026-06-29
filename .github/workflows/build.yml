@@ -13,7 +13,9 @@ jobs:
           pip3 install --user --upgrade buildozer
       - name: Build with Buildozer
         run: |
-          buildozer android clean
+          # Qovluqları təmizləyirik ki, köhnə qalıqlar mane olmasın
+          rm -rf .buildozer
+          # Build-i birbaşa qovluq yaratmağa məcbur edirik
           buildozer -v android debug
       - name: Upload APK
         uses: actions/upload-artifact@v4
