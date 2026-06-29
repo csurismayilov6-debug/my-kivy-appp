@@ -11,12 +11,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev cmake libffi-dev libssl-dev
           pip3 install --user --upgrade buildozer
-      - name: Prepare python-for-android
-        run: |
-          git clone https://github.com/kivy/python-for-android.git
-          pip3 install --user ./python-for-android
       - name: Build with Buildozer
-        run: buildozer -v android debug
+        run: |
+          # buildozer-in özünün mühiti düzgün qurması üçün əvvəlcə clean edirik
+          buildozer android clean
+          buildozer -v android debug
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
