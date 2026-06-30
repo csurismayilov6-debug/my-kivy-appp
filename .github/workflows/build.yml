@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'
 
@@ -29,7 +29,8 @@ jobs:
           python3 -m venv venv
           source venv/bin/activate
           pip install --upgrade pip
-          pip install buildozer
+          pip install buildozer cython==0.29.33
+          buildozer clean
           buildozer -v android debug --log-level 2
 
       - name: Upload APK
