@@ -30,7 +30,6 @@ jobs:
           source venv/bin/activate
           pip install --upgrade pip
           pip install buildozer cython==0.29.33
-          buildozer clean
           buildozer -v android debug --log-level 2
 
       - name: Upload APK
